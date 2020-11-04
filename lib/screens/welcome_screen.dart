@@ -15,22 +15,12 @@ class WelcomeScreen extends StatelessWidget {
     return Container(
       color: Constants.backgroundColor,
       child: Stack(
-        fit: StackFit.expand,
-        // alignment: Alignment.topCenter,
+        alignment: Alignment.topCenter,
         children: <Widget>[
-          Positioned(
-            top: 0,
-            right: 0,
-            child: Image.asset('assets/icons/top_right.png'),
-            width: size.width * 0.758,
-            height: size.height * 0.3,
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset('assets/icons/top_left_icon.png'),
-            width: size.width * 0.28,
-            height: size.height * 0.18,
+          Container(
+            height: size.height * 0.23,
+            width: double.infinity,
+            color: Constants.buttonColor,
           ),
           Positioned(
             bottom: 0,
@@ -38,8 +28,6 @@ class WelcomeScreen extends StatelessWidget {
             child: Image.asset('assets/icons/splash_left_top_icon.png'),
             width: size.width * 0.28,
           ),
-          // Center(
-          //   child:
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * .02,
+                height: size.height * .04,
               ),
               Container(
                 child: SvgPicture.asset(
