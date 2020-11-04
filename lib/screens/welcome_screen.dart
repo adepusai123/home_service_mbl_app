@@ -13,32 +13,40 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: double.infinity,
-      height: double.infinity,
       color: Constants.backgroundColor,
       child: Stack(
-        alignment: Alignment.center,
-        children: [
+        fit: StackFit.expand,
+        // alignment: Alignment.topCenter,
+        children: <Widget>[
           Positioned(
             top: 0,
             right: 0,
             child: Image.asset('assets/icons/top_right.png'),
-            width: size.width * 0.8,
+            width: size.width * 0.758,
+            height: size.height * 0.3,
           ),
           Positioned(
             top: 0,
             left: 0,
             child: Image.asset('assets/icons/top_left_icon.png'),
-            width: size.width * 0.3,
+            width: size.width * 0.28,
+            height: size.height * 0.18,
           ),
-          Center(
-              child: Column(
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Image.asset('assets/icons/splash_left_top_icon.png'),
+            width: size.width * 0.28,
+          ),
+          // Center(
+          //   child:
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 80),
                 child: SizedBox(
-                  height: 45,
+                  height: 40,
                   child: Text(
                     "Home Service",
                     textAlign: TextAlign.center,
@@ -52,15 +60,21 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: size.height * .02,
+              ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 30),
                 child: SvgPicture.asset(
                   'assets/svg/undraw_balloons_vxx5.svg',
                   height: size.width * 0.5,
                   width: size.width * 0.5,
                 ),
               ),
+              SizedBox(
+                height: size.height * .02,
+              ),
               Container(
+                margin: EdgeInsets.only(top: 10),
                 padding: EdgeInsets.symmetric(
                   horizontal: 15,
                   vertical: 10,
@@ -83,15 +97,13 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: size.height * .02,
+              ),
               RoundedButton(text: 'GET START')
             ],
-          )),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Image.asset('assets/icons/splash_left_top_icon.png'),
-            width: size.width * 0.3,
           ),
+          // ),
         ],
       ),
     );
